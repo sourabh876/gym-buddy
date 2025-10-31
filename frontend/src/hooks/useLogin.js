@@ -10,7 +10,7 @@ export const useLogin =  () =>{
         setError(null)
         setisLoading(true)
 
-        const response = await fetch('/api/user/login',{
+        const response = await fetch('https://gym-buddy-eight.vercel.app/api/user/login',{
             method : "POST",
             headers: {"Content-type" : "application/json"},
             body: JSON.stringify({Email,Password})
