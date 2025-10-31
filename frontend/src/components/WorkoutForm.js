@@ -29,7 +29,7 @@ const WorkoutForm = () => {
 
         const workout = {title,load,reps}
 
-        const response = await fetch("https://gym-buddy-eight.vercel.app/api/workouts", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/workouts`, {
             method : 'POST',
             body: JSON.stringify(workout),
             headers: {

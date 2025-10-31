@@ -18,7 +18,7 @@ const WorkoutDetails  = ({workout}) => {
       return
     }
 
-    const response = await fetch(`https://gym-buddy-eight.vercel.app/api/workouts/${workout._id}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/workouts/${workout._id}`, {
       method : "DELETE",
       headers: {
             "Authorization" : `Bearer ${user.token}` 
