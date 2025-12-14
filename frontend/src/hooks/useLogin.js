@@ -1,6 +1,7 @@
 const { useState } = require("react");
 const { useAuthContext } = require("./useAuthContext");
 
+
 export const useLogin = () => {
     const { dispatch } = useAuthContext()
     const [Error, setError] = useState(null)
@@ -10,11 +11,11 @@ export const useLogin = () => {
         setError(null)
         setisLoading(true)
 
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/user/login`, {
+        const response = await fetch(`/api/user/login/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ Email, Password })
-        });
+        })
 
         const json = await response.json()
 
